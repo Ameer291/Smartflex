@@ -1,0 +1,63 @@
+======================================================================
+SMARTFLEX RESULTS SUMMARY — FOR REPORT
+Generated: 2026-04-12 13:53
+Episodes per policy: 500
+======================================================================
+
+KEY FINDINGS (use these exact numbers in your report):
+
+  1. SAC reduces daily energy cost by 7.5% compared to a naive thermostat
+     (from 590.2p to 546.1p per day)
+
+  2. SAC reduces cost by 65.0% compared to the rule-based controller
+     (from 1560.2p to 546.1p per day)
+
+  3. Comfort penalty: SAC=0.090, Rule=12.378, Naive=15.172
+
+  4. Statistical significance (SAC vs Rule cost):
+     p-value = 0.000000 (significant)
+     Cohen's d = -2.216 (large effect)
+     95% CI for SAC cost: (np.float64(515.9540452151194), np.float64(576.1523448721229))
+
+PER-SEASON BREAKDOWN:
+
+  Winter (n=117):
+    SAC=945.1p, Rule=1570.5p, Naive=1029.3p
+    SAC vs Rule: +39.8%
+
+  Spring (n=129):
+    SAC=475.1p, Rule=1663.3p, Naive=594.8p
+    SAC vs Rule: +71.4%
+
+  Summer (n=135):
+    SAC=256.9p, Rule=1394.6p, Naive=147.0p
+    SAC vs Rule: +81.6%
+
+  Autumn (n=119):
+    SAC=558.6p, Rule=1626.0p, Naive=656.4p
+    SAC vs Rule: +65.6%
+
+
+LIMITATIONS TO DISCUSS IN YOUR REPORT:
+
+  1. Simulation-only: no real-world deployment or validation
+  2. Simplified thermal model (single-zone, no humidity)
+  3. Cloud cover constant per day (real weather varies hourly)
+  4. No battery degradation modelling
+  5. Simplified tariff (not real half-hourly Agile prices)
+  6. No occupancy prediction (agent reacts, doesn't anticipate)
+  7. Training requires significant compute time
+  8. No multi-zone temperature modelling
+  9. Fixed house parameters (no adaptation to different homes)
+
+
+FUTURE WORK SUGGESTIONS:
+
+  1. Real-world data integration (Octopus Agile API, weather API)
+  2. Multi-agent: coordinate multiple homes in a neighbourhood
+  3. Transfer learning: adapt trained agent to different houses
+  4. EV charging integration as additional controllable load
+  5. Sim-to-real transfer with domain randomisation
+  6. Battery degradation-aware control
+  7. Multi-objective RL (Pareto-optimal policies)
+  8. Explainability: interpret what the neural network learned
